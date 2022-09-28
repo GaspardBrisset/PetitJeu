@@ -1,0 +1,34 @@
+<%- include('z-header') -%>
+    <title>Editer  profil </title>
+</head>
+<body>
+    <div class="forms">
+        <%- include('z-nav') -%>
+        <div class="profile">
+            <div class="title">Éditer mon profil</div>
+            <h6><%= name %></h6>
+
+            <form action="/edit" method="post">
+                <div class="email"></span><%= title.email %></div>
+                <div class="blocavatars" id="avatars">
+                    <% for (image of images) { %>
+                        <% if (title.image === image.url) { %>
+                            <label class="avatars">
+                                <input type="radio" name="avatar" value="<%= image.url %>" checked="checked">
+                                <img src="<%= image.url %>" alt="">
+                            </label>
+                        <% } else { %>
+                            <label class="avatars">
+                                <input type="radio" name="avatar" value="<%= image.url %>">
+                                <img src="<%= image.url %>" alt="">
+                            </label>
+                    <% } } %>
+                </div>
+                <input type="text" name="pseudo" id="" placeholder="nickname" autocomplete="off" value="<%= name %>">
+                <input type="password" name="password" id="" placeholder="password" autocomplete="off" value="<%= title.password %>">
+              
+                <input type="submit" value="modifier mon profil">
+            </form>
+        </div>
+    </div>
+<%- include('z-footer') -%>

@@ -1,0 +1,38 @@
+<%- include('z-header') -%>
+    <title>Equiper mon robot</title>
+</head>
+<body>
+    <div class="index">
+        <%- include('z-nav') -%>
+        <div class="objets">
+            <div class="title">La boutique</div>
+            <h6><%= name %></h6>
+            <br/><%= erreur%><br/>
+            <div class="boutique">
+                <form action="/buyshop" method="post">
+                    <div id="boutique">
+                    <% for (shop of shops) { %>
+                        <div class="contentObjects">
+                            <label class="objetshop">
+                                <input type="radio" name="objetshop" value="<%= shop.id_obj%>">
+
+                                <img src="<%= shop.img %>"><br/>
+                                <div class="descrObjets">
+                                <span class="exemplaires"><%= shop.nbExemplaires %></span>
+                                <p>
+                                    <span class="nom"><%= shop.nom %></span>
+                                    <span class="prix"><%= shop.prix %> po</span>
+                                </p>
+                                
+                                
+                                </div>
+                            </label>
+                        </div>
+                    <%}%>
+                    </div>
+                    <input type="submit" value="Acheter">
+                </form>
+            </div>
+        </div>
+    </div>
+<%- include('z-footer') -%>

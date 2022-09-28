@@ -1,0 +1,36 @@
+<%- include('z-header') %>
+    <title>Equiper mon robot</title>
+   
+</head>
+<body>
+    <div class="index">
+        <%- include('z-nav') -%>
+        <div class="objets">
+            <div class="title">Équiper mon robot</div>
+            <h6><%= name %></h6>
+            <% let i = 0 %>
+            <form action="/equiper" method="post" id="equipements" class="monSac">
+            <% if(objets.length > 0) {%>
+                <%for (objet of objets) { %>
+                    <div class="objetSac">
+                        <label class="equipements">
+                            <input type="radio" name="equipement" value="<%= objet.id_obj%>"/>
+                            <img src="<%= objet.img %>">
+                        </label>
+                    </div>
+                    <%for (i ; i < 8-objets.length ; i++) {%>
+                        <div class="objetSac">
+                        </div>
+                
+            <%}}} else {%>
+                <%for (i ; i < 8-objets.length; i++) {%>
+                    <div class="objetSac">
+                    </div>
+            <%}}%>
+            <input type="submit" value="Choisir cet équipement">
+            </form>
+            
+        </div>
+    </div>
+
+<%- include('z-footer') %>

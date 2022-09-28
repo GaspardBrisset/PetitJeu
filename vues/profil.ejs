@@ -1,0 +1,26 @@
+<%- include('z-header') -%>
+    <title>Voir mon profil</title>
+</head>
+<body>
+    <div class="index">
+        <%- include('z-nav') -%>
+        <div class="profile">
+            <div class="title">Profil de</div>
+            <h6><%= name %></h6>
+
+            <div class="contentP">
+                <img src="<%= image %>" >
+
+                <span>Adresse email : 
+                    <strong><%= title.email %></strong>
+                    <br/><br/>
+                    <a href="/editprofil">Éditer mon profil</a>
+                </span>
+            </div>
+            
+            
+
+        </div>
+    </div>
+    
+<%- include('z-footer') -%>

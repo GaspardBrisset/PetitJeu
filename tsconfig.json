@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "watch": true,
+        "target": "ESNext",
+        "noEmitOnError": true,
+        "strict": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "Node", 
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

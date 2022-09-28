@@ -1,0 +1,74 @@
+<%- include('z-header') %>
+    <title>Equiper mon robot</title>
+  
+</head>
+<body>
+    <div class="index">
+        <%- include('z-nav') -%>
+        <div class="objets">
+            <div class="title">Voir mon robot</div>
+            <h6><%= name %></h6>
+                <div class="sacRobot">        
+                    <div class="monRobot">
+                        <img src="<%= user.image %>" class="imgRobot"/>
+                    </div>
+                    <div class="mesObjets">
+                        <div class="mesObjetsEq"> 
+                            <div class="objEquip">
+                            <% for(objet of objets) {%> 
+                                    <% if(objet.type=="arme"){ %>
+                                            <a href="/desequiper/<%= objet.id_obj %>" id="delete" class="delete">
+                                                <span class="material-symbols-outlined">Fermeture</span>
+                                            </a>
+                                            <img src="<%= objet.img %>">                    
+                            <% } }%>
+                            </div>
+                            <div class="objEquip">
+                                <% for(objet of objets) {%> 
+                                    <% if(objet.type=="bouclier"){ %>
+                                  
+                                        <a href="/desequiper/<%= objet.id_obj %>" id="delete" class="delete">
+                                            <span class="material-symbols-outlined">Fermeture</span>
+                                        </a>
+                                        <img src="<%= objet.img %>">        
+                                <% } } %>
+                            </div>
+                            <div class="objEquip">
+                                <% for(objet of objets) {%>
+                                    <% if(objet.type=="tenue"){ %>
+                                   
+                                        <a href="/desequiper/<%= objet.id_obj %>" id="delete" class="delete">
+                                            <span class="material-symbols-outlined">
+                                            close
+                                            </span>
+                                        </a>
+                                        <img src="<%= objet.img %>">
+                                   
+                                <% }}%> 
+                            </div>                    
+                        </div>
+                    </div>
+              
+                    <div class="butObjets">
+                        <a href="/sac">Équiper mon Robot</a>
+                    </div>
+                    
+                </div>
+                <div class="descriptif">
+                    <span>Force : <%= user.force_rbt %></span>
+                
+                    <span>Défense :<strong> <%= user.defense %></strong></span>
+                    
+                    <span>Esquive :<strong> <%= user.esquive %></strong></span>
+                </div>
+                <div class="descriptif">
+                    <span>Points de vie :<strong> <%= user.pv %></strong></span>
+                    
+                    <span>Expérience :<strong> <%= user.experience %></strong></span>
+                    
+                    <span>Monnaie :<strong> <%= user.argent %></strong></span>
+                </div>
+            
+        </div>
+    </div>
+<%- include('z-footer') %>

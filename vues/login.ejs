@@ -1,0 +1,21 @@
+<%- include('z-header') -%>
+    <title>Connexion </title>
+</head>
+<body>
+    <div class="forms">
+        <div class="formContent">
+            <h1>Login</h1>
+            <h5>Robot fighters</h5>
+            <form action="/index" method="post">
+                <input type="text" name="email" id="" placeholder="email" autocomplete="off">
+                <input type="text" name="pseudo" id="" placeholder="nickname" autocomplete="off">
+                <input type="password" name="password" id="" placeholder="password" autocomplete="off">
+              
+                <input type="submit" value="log now">
+
+                <span>Not a member yet ? <a href="/">Register</a></span>
+            </form>
+        </div>
+        
+    </div>
+<%- include('z-footer') -%>

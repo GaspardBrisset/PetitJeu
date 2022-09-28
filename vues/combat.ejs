@@ -1,0 +1,55 @@
+<%- include('z-header') -%>
+    <title>Attaquer un robot </title>
+</head>
+<body>
+    <div class="index">
+        <%- include('z-nav') -%>
+
+        <div class="combat">
+            <div class="title"> Fight !</div>
+            <div class="retour"><a href="/index"> Liste des robots</a></div>
+
+            <div class="contentCombat">
+                <div class="vous">
+                    <div class="image">
+                        <img src="<%= user.image %>">
+                    </div>
+                    <div class="pseudo"><%= user.pseudo %></div>
+                    <div class="stats">
+                        <span><%= user.experience %> XP</span>
+                        <hr/>
+                        <span><%= user.argent%> PO</span>
+                        <hr/>
+                        <span><%= user.force_rbt%> pts de force</span>
+                        <span><%= user.defense %> pts de défense</span>
+                        <span><%= user.esquive %> pts d'esquive</span>
+                        <span><%= user.pv%> pts de vie</span>
+                    </div>
+                </div>
+
+                <div class="messageCombat">
+                    <%- combat %>
+                </div>
+
+                <div class="adversaire">
+                    <div class="image">
+                        <img src="<%= adversaire.image %>">
+                    </div>
+                    <div class="pseudo"><%= adversaire.pseudo %></div>
+                    <div class="stats">
+                        <span><%= adversaire.experience %> XP</span>
+                        <hr/>
+                        <span><%= adversaire.argent%> PO</span>
+                        <hr/>
+                        <span><%= adversaire.force_rbt%> pts de force</span>
+                        <span><%= adversaire.defense %> pts de défense</span>
+                        <span><%= adversaire.esquive %> pts d'esquive</span>
+                        <span><%= adversaire.pv%> pts de vie</span>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+   
+<%- include('z-footer') -%>

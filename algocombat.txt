@@ -1,0 +1,44 @@
+FONCTION combat
+    retour=""
+    paire=vrai
+    TANT QUE robotB.pv>0 ET robotA.pv>0
+        SI paire
+            retour += "message robot a attaque"
+            esquive=faux
+            POUR I=0 A robotB.getEsquive()
+                SI nbAleat(1,7)=6
+                    esquive=vrai
+                FIN SI
+            FIN POUR
+            SI esquive
+                retour += "robot b esquive"
+            SINON
+                SI robotB.def<robotA.force
+                    robotB.pv = robotA.force-robotB.def
+                FIN SI
+            FIN SI
+        SINON
+            retour += "message robot b attaque"
+            esquive=faux
+            POUR I=0 A robota.getEsquive()
+                SI nbAleat(1,7)=6
+                    esquive=vrai
+                FIN SI
+            FIN POUR
+            SI esquive
+                retour += "robot a esquive"
+            SINON
+                SI robotA.def<robotB.force
+                    robotA.pv = robotB.force-robotA.def
+                FIN SI
+            FIN SI
+        FIN SI
+        SI robotB.pv <=0
+            retour += "robot A gagne"
+        SINON SI robotA.pv <=0
+            retour += "robot B gagne"
+        FIN SI
+        paire = NOT paire
+    FIN TANQUE
+    RENVOIS retour
+FIN FONCTION
